@@ -1,0 +1,477 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/***************************************************
+-----------------Hamburger Button-------------------
+***************************************************/	
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700);
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.menu-opener, .menu-opener:hover, .menu-opener.active, .menu-opener-inner, .menu-opener-inner::before, .menu-opener-inner::after, .menu, .menu.active {
+  -webkit-transition: 250ms all;
+  transition: 250ms all;
+}
+
+.menu-opener {
+  cursor: pointer;
+  height: 64px;
+  position: absolute;
+  top: 2%;
+  left: 85%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 64px;
+}
+.menu-opener:hover, .menu-opener.active {
+  background: #09C;
+}
+
+.menu-opener-inner {
+  background: #fff;
+  height: .5rem;
+  margin-left: .75rem;
+  margin-top: 1.75rem;
+  width: 2.5rem;
+}
+.menu-opener-inner::before, .menu-opener-inner::after {
+  background: white;
+  content: '';
+  display: block;
+  height: .5rem;
+  width: 2.5rem;
+}
+.menu-opener-inner::before {
+  -webkit-transform: translateY(-0.75rem);
+  -ms-transform: translateY(-0.75rem);
+  transform: translateY(-0.75rem);
+}
+.menu-opener-inner::after {
+  -webkit-transform: translateY(0.25rem);
+  -ms-transform: translateY(0.25rem);
+  transform: translateY(0.25rem);
+}
+.menu-opener-inner.active {
+  background: transparent;
+}
+.menu-opener-inner.active::before {
+  -webkit-transform: translateY(0rem) rotate(-45deg);
+  -ms-transform: translateY(0rem) rotate(-45deg);
+  transform: translateY(0rem) rotate(-45deg);
+}
+.menu-opener-inner.active::after {
+  -webkit-transform: translateY(-0.5rem) translateX(0rem) rotate(45deg);
+  -ms-transform: translateY(-0.5rem) translateX(0rem) rotate(45deg);
+  transform: translateY(-0.5rem) translateX(0rem) rotate(45deg);
+}
+
+.menu {
+  background: #09C;
+  color: transparent;
+  height: 700px;
+  position: absolute;
+  top: 0%;
+  left: 80%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 0rem;
+  z-index: -1;
+}
+.menu.active {
+  width: -webkit-calc(100% - 2rem);
+  width: 200px;
+  height: 400px;
+}
+.menu.active .menu-link {
+  color: white;
+}
+
+.menu-inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  margin-top: 40px;
+  margin-right: 3rem;
+  margin-bottom:40px;
+  padding: 10px;
+  z-index:2;
+}
+
+.menu-link {
+  color: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction:column;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  font-size: 1rem;
+  font-weight: 100;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+.menu-link li {
+  margin: auto;
+}
+
+/***************************************************
+---------------NAVIGATION---------------------------
+***************************************************/
+
+
+		
+	#logo #logoimage{
+		float:left;
+		width: 4em;
+		padding: .5em;
+	}
+
+	nav a span{
+		display:none;
+	}
+	
+	nav li{
+		font-family:'Teko';
+		font-weight: 300;
+		font-size:1.7em;
+		display:inline-block;
+		width: 7em;
+		padding: 1.3em .05em .7em ;
+	}
+	
+	nav li a:hover{
+		color:#09C;
+	}
+	
+	nav{
+		text-align:center;
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		margin-bottom:20px;
+		background-color:#232323;
+		z-index:10;
+	}
+
+	nav li a{
+		text-decoration:none;
+		color: white;
+	}
+	
+	nav.sticky {
+		font-size: .8em;
+		line-height: 25px;
+		padding: 0;
+	}
+
+/***************************************************
+-------------------CONTENT-------------------------
+***************************************************/
+body{
+	font-color:white;
+	font-size: 100%;
+	background:url(../assets/keybackground.jpg) scroll;
+	overflow-x: hidden;
+}
+section h1{
+	font-family:'Teko';
+	font-weight: 300;
+	font-size:65px;
+	margin-bottom:14px;
+	align-content:left;
+	color:#09C;
+}
+strong{font-weight:bold;}
+section {
+    min-height: 1000px;
+    position: relative;
+    width: 100% !important;
+    min-width: 1000px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#key1>div:nth-of-type(1){
+	background: url(../assets/chip/1.png) 50% 0 no-repeat fixed;
+    margin: 0;
+    height: 1000px;
+    top:0;left:0;
+    width:100%;  
+	z-index:10; 
+}
+
+#key2>div:nth-of-type(1){
+	background: url(../assets/chip/2.png) 50% 0 no-repeat fixed;
+    margin: 0;
+    height: 1000px;
+    top:0;left:0;
+    width:100%;   
+}
+#key3>div:nth-of-type(1){
+	background: url(../assets/chip/3.png) 50% 0 no-repeat fixed;
+    margin: 0;
+    height: 1000px;
+    top:0;left:0;
+    width:100%;   
+}
+#key4>div:nth-of-type(1){
+	background: url(../assets/chip/4.png) 50% 0 no-repeat fixed;
+    margin: 0;
+    height: 1000px;
+    top:0;left:0;
+    width:100%;   
+}
+#key5>div:nth-of-type(1){
+	background: url(../assets/chip/5.png) 50% 0 no-repeat fixed;
+    margin: 0;
+    height: 1000px;
+    top:0;left:0;
+    width:100%;   
+}
+#key6>div:nth-of-type(1){
+	background: url(../assets/chip/6.png) 50% 0 no-repeat fixed;
+    margin: 0;
+    height: 1000px;
+    top:0;left:0;
+    width:100%;   
+}
+
+
+section p{
+	font-family:Open Sans Condensed;
+	font-style:italic;
+	color:white;
+	width:300px;
+	font-size:21px;
+	}
+section article{position:absolute;top:240px;left:40px;width:300px;z-index:4;}
+
+.parallax1-item{position:absolute;z-index:10;top:40px;left:400px;}
+.parallax2-item{position:absolute;z-index:9;top:40px;left:400px;}
+.parallax3-item{position:absolute;z-index:8;top:40px;left:400px;}
+.parallax4-item{position:absolute;z-index:8;top:40px;left:400px;}
+.parallax5-item{position:absolute;z-index:8;top:40px;left:400px;}
+.parallax6-item{position:absolute;z-index:8;top:40px;left:400px;}
+
+/* scroll up button */
+.scrollup {
+    width: 75px;
+    height: 75px;
+    position: fixed;
+    bottom: 7px;
+    right: 50px;
+    text-indent: -9999px;
+    background: url(../assets/scroll-to-top-button.png) no-repeat;
+	z-index:6;
+}
+
+.scrolldown {
+	width:100px;
+	height:100px;
+	position: fixed;
+	bottom:4px;
+	left:50%;
+	z-index:7;
+	text-decoration:none;
+	font-size:36px;
+	
+}
+
+.scrolldown p{
+	text-decoration:none;
+	color:#09c;
+	font-family:Open Sans Condensed;
+	font-size:36px;
+	font-align:center;
+}
+	
+
+
+	
+
+/***************************************************
+---------------FOOTER---------------------------
+***************************************************/
+	footer{
+		text-align:center;
+		width:100vw;
+		background-color:#232323;
+		position:absolute;
+		z-index:5;
+	}
+	footer a{
+		text-decoration:none;
+		color:white;
+		z-index:5;
+	}
+	footer p{
+		font-family:'Teko';
+		font-weight:300;
+		font-size:2em;
+		color:white;
+		padding-bottom:10px;
+		z-index:5;
+	}
+
+/***************************************************
+---------------Breakpoints---------------------------
+***************************************************/
+
+
+@media only screen and (max-width: 768px) {
+	
+	nav.sticky {
+		
+		font-size:1em;
+	}
+	
+	nav li{
+		display:none;
+	}
+	
+	
+	.menu-link li {
+  	display:block;
+	padding-right:100px;
+	padding-left:10px;
+	padding-bottom:40px;
+	text-align:left;
+	height: 700px;
+	}
+	
+	footer p{
+		font-size:1.5em;
+	}
+	
+	  .menu {
+    height: 700px;
+	display:block;
+  }
+
+    .menu-link {
+    font-size: 15px;
+	height:50px;
+  }
+	
+}
+
+@media only screen and (min-width: 769px) {
+	
+	nav li{
+		font-size:24px;
+
+	}
+	
+	footer p{
+		font-size:23px;
+	}
+	
+	.menu-opener{
+		display:none;
+	}
+	
+	.menu-inner{
+		display:none;
+		}
+		
+		.menu{
+			display:none;
+		}
+		
+}
+
+@media only  screen and (min-width: 1920px) {
+	
+	nav li{
+		font-size:1.7em;
+	}
+	
+	.menu-opener{
+		display:none;
+	}
+	
+	.menu-inner{
+		display:none;
+		}
+		
+	
+	.menu{
+		display:none;
+	}
+
+
+}
